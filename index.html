@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz Battle - Chats 🐱</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<!-- Page d'accueil -->
+<div id="welcome-screen">
+    <h1>Bienvenue dans le Quiz Battle : 🐾 Chats 🐾</h1>
+    <button id="start-button">🎮 Commencer le Quiz</button>
+    <div id="cat-decoration"></div>
+</div>
+
+<!-- Section du Quiz (cachée avant de cliquer sur le bouton) -->
+<section id="quiz-section" style="display: none;">
+    <header class="quiz-header">
+        <div class="quiz-title">🐾 Quiz Battle : Chats 🐾</div>
+        <div class="player-info">
+            <span id="current-player">Joueur 1</span>
+            <span id="player-timer">⏱ 0s</span>
+        </div>
+    </header>
+    <div id="quiz-content">
+        <div class="quiz-container" id="quiz" style="display: none;">
+            <div class="question" data-correct="a" title="📝 Le Sphynx est une race de chat reconnue pour son absence de poils.">
+                <h3>1. Quelle est la race de chat sans poils la plus connue ?</h3>
+                <div class="answers">
+                    <label><input type="radio" name="q1" value="a"> Sphynx</label>
+                    <label><input type="radio" name="q1" value="b"> Siamois</label>
+                    <label><input type="radio" name="q1" value="c"> Persan</label>
+                </div>
+            </div>
+
+            <div class="question" data-correct="b" title="📝 On dit traditionnellement que les chats ont 9 vies.">
+                <h3>2. Combien de vies dit-on qu’un chat possède ?</h3>
+                <div class="answers">
+                    <label><input type="radio" name="q2" value="a"> 3</label>
+                    <label><input type="radio" name="q2" value="b"> 9</label>
+                    <label><input type="radio" name="q2" value="c"> 7</label>
+                </div>
+            </div>
+
+            <div class="question" data-correct="a" title="📝 La queue du chat l’aide à garder son équilibre.">
+                <h3>3. Quelle partie du corps d’un chat lui permet de garder l’équilibre ?</h3>
+                <div class="answers">
+                    <label><input type="radio" name="q3" value="a"> Sa queue</label>
+                    <label><input type="radio" name="q3" value="b"> Ses moustaches</label>
+                    <label><input type="radio" name="q3" value="c"> Ses pattes arrière</label>
+                </div>
+            </div>
+
+            <div class="question" data-correct="b" title="📝 Le Maine Coon est le plus grand chat domestique en taille.">
+                <h3>4. Quel est le plus grand félin domestique en taille ?</h3>
+                <div class="answers">
+                    <label><input type="radio" name="q4" value="a"> Bengal</label>
+                    <label><input type="radio" name="q4" value="b"> Maine Coon</label>
+                    <label><input type="radio" name="q4" value="c"> British Shorthair</label>
+                </div>
+            </div>
+
+            <div class="question" data-correct="c" title="📝 Un chat dort en moyenne entre 12 et 16 heures par jour.">
+                <h3>5. Combien de temps dort un chat en moyenne par jour ?</h3>
+                <div class="answers">
+                    <label><input type="radio" name="q5" value="a"> 8 heures</label>
+                    <label><input type="radio" name="q5" value="b"> 12 heures</label>
+                    <label><input type="radio" name="q5" value="c"> 15 heures</label>
+                </div>
+            </div>
+
+            <div class="question" data-correct="b" title="📝 Le chocolat est toxique pour les chats.">
+                <h3>6. Quel aliment est toxique pour les chats ?</h3>
+                <div class="answers">
+                    <label><input type="radio" name="q6" value="a"> Poulet</label>
+                    <label><input type="radio" name="q6" value="b"> Chocolat</label>
+                    <label><input type="radio" name="q6" value="c"> Saumon</label>
+                </div>
+            </div>
+
+            <div class="question" data-correct="b" title="📝 Les chats ronronnent souvent pour exprimer leur bien-être ou s'apaiser.">
+                <h3>7. Que signifie un chat qui ronronne ?</h3>
+                <div class="answers">
+                    <label><input type="radio" name="q7" value="a"> Il est en colère</label>
+                    <label><input type="radio" name="q7" value="b"> Il est content ou cherche à se calmer</label>
+                    <label><input type="radio" name="q7" value="c"> Il a faim uniquement</label>
+                </div>
+            </div>
+
+            <div class="question" data-correct="a" title="📝 La gestation chez les chattes dure environ 9 semaines.">
+                <h3>8. Quelle est la durée de gestation d’une chatte ?</h3>
+                <div class="answers">
+                    <label><input type="radio" name="q8" value="a"> 9 semaines</label>
+                    <label><input type="radio" name="q8" value="b"> 4 semaines</label>
+                    <label><input type="radio" name="q8" value="c"> 12 semaines</label>
+                </div>
+            </div>
+
+            <div class="question" data-correct="c" title="📝 Un chat mâle stérilisé est appelé chat castré.">
+                <h3>9. Comment appelle-t-on un chat mâle stérilisé ?</h3>
+                <div class="answers">
+                    <label><input type="radio" name="q9" value="a"> Un matou</label>
+                    <label><input type="radio" name="q9" value="b"> Un chaton</label>
+                    <label><input type="radio" name="q9" value="c"> Un chat castré</label>
+                </div>
+            </div>
+
+            <div class="question" data-correct="b" title="📝 En se frottant, les chats déposent des phéromones pour marquer leur territoire.">
+                <h3>10. Pourquoi les chats se frottent-ils contre vous ?</h3>
+                <div class="answers">
+                    <label><input type="radio" name="q10" value="a"> Pour jouer</label>
+                    <label><input type="radio" name="q10" value="b"> Pour marquer leur territoire</label>
+                    <label><input type="radio" name="q10" value="c"> Pour demander à sortir</label>
+                </div>
+            </div>
+
+            <div class="question" data-correct="a" title="📝 Les chats siamois ont souvent les yeux bleus.">
+                <h3>11. Quelle couleur d’yeux est fréquente chez les chats siamois ?</h3>
+                <div class="answers">
+                    <label><input type="radio" name="q11" value="a"> Bleu</label>
+                    <label><input type="radio" name="q11" value="b"> Vert</label>
+                    <label><input type="radio" name="q11" value="c"> Marron</label>
+                </div>
+            </div>
+
+            <div class="question" data-correct="b" title="📝 Le chat est l'animal domestique le plus populaire en France.">
+                <h3>12. Quel est l’animal de compagnie le plus répandu en France ?</h3>
+                <div class="answers">
+                    <label><input type="radio" name="q12" value="a"> Le chien</label>
+                    <label><input type="radio" name="q12" value="b"> Le chat</label>
+                    <label><input type="radio" name="q12" value="c"> Le lapin</label>
+                </div>
+            </div>
+
+            <div class="question" data-correct="a" title="📝 Montrer son ventre peut être un signe de confiance chez le chat.">
+                <h3>13. Que signifie un chat qui montre son ventre ?</h3>
+                <div class="answers">
+                    <label><input type="radio" name="q13" value="a"> Il veut être caressé (pas toujours !)</label>
+                    <label><input type="radio" name="q13" value="b"> Il a mal</label>
+                    <label><input type="radio" name="q13" value="c"> Il a froid</label>
+                </div>
+            </div>
+
+            <div class="question" data-correct="c" title="📝 Le couinement est un miaulement plus aigu, souvent utilisé par les chatons.">
+                <h3>14. Comment s’appelle le son aigu que fait un chaton ?</h3>
+                <div class="answers">
+                    <label><input type="radio" name="q14" value="a"> Un grognement</label>
+                    <label><input type="radio" name="q14" value="b"> Un miaulement</label>
+                    <label><input type="radio" name="q14" value="c"> Un couinement</label>
+                </div>
+            </div>
+
+            <div class="question" data-correct="b" title="📝 Un chat domestique vit en moyenne entre 10 et 15 ans.">
+                <h3>15. Quelle est l’espérance de vie moyenne d’un chat domestique ?</h3>
+                <div class="answers">
+                    <label><input type="radio" name="q15" value="a"> 5 à 8 ans</label>
+                    <label><input type="radio" name="q15" value="b"> 10 à 15 ans</label>
+                    <label><input type="radio" name="q15" value="c"> 18 à 25 ans</label>
+                </div>
+            </div>
+        </div> 
+    </div>
+</section>
+
+<footer>
+    <p>Équipe MiaouMiaou 🐱 | Raphaël & Constance | © 13/06/2025 Quiz Battle</p>
+</footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
