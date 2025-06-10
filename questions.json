@@ -1,0 +1,317 @@
+{"questions":{
+    "1" : {
+        "enoncer":"1. Quelle est la race de chat sans poils la plus connue ?",
+        "reponses":{
+            "r1":{
+                "reponse":"Sphynx" ,
+                "vraifaux" : true
+            },
+            "r2":{
+                "reponse":"Siamois" ,
+                "vraifaux" : false
+            },
+            "r3":{
+                "reponse":"Persan" ,
+                "vraifaux" : false
+            },
+            "r4":{
+                "reponse":"" ,
+                "vraifaux" : false
+            }
+        }
+    },
+    "2" : {
+        "enoncer":"2. Combien de vies dit-on qu’un chat possède ?",
+        "reponses":{
+            "r1":{
+                "reponse":" 3" ,
+                "vraifaux" : false
+            },
+            "r2":{
+                "reponse":" 9" ,
+                "vraifaux" : true
+            },
+            "r3":{
+                "reponse":" 7" ,
+                "vraifaux" : false
+            },
+            "r4":{
+                "reponse":"" ,
+                "vraifaux" : false
+            }
+        }
+    },
+    "3" : {
+        "enoncer":"3. Quelle partie du corps d’un chat lui permet de garder l’équilibre ?",
+        "reponses":{
+            "r1":{
+                "reponse":" Sa queue" ,
+                "vraifaux" : true
+            },
+            "r2":{
+                "reponse":" Ses moustaches" ,
+                "vraifaux" : false
+            },
+            "r3":{
+                "reponse":" Ses pattes arrière" ,
+                "vraifaux" : false
+            },
+            "r4":{
+                "reponse":"" ,
+                "vraifaux" : false
+            }
+        }
+    },
+    "4" : {
+        "enoncer":"4. Quel est le plus grand félin domestique en taille ?",
+        "reponses":{
+            "r1":{
+                "reponse":" Bengal" ,
+                "vraifaux" : false
+            },
+            "r2":{
+                "reponse":" Maine Coon" ,
+                "vraifaux" : true
+            },
+            "r3":{
+                "reponse":" British Shorthair" ,
+                "vraifaux" : false
+            },
+            "r4":{
+                "reponse":"" ,
+                "vraifaux" : false
+            }
+        }
+    },
+    "5" : {
+        "enoncer":"5. Combien de temps dort un chat en moyenne par jour ?",
+        "reponses":{
+            "r1":{
+                "reponse":" 8 heures" ,
+                "vraifaux" : false
+            },
+            "r2":{
+                "reponse":" 12 heures" ,
+                "vraifaux" : false
+            },
+            "r3":{
+                "reponse":" 15 heures" ,
+                "vraifaux" : false
+            },
+            "r4":{
+                "reponse":"" ,
+                "vraifaux" : false
+            }
+        }
+    },
+    "6" : {
+        "enoncer":"6. Quel aliment est toxique pour les chats ?",
+        "reponses":{
+            "r1":{
+                "reponse":" Poulet" ,
+                "vraifaux" : false
+            },
+            "r2":{
+                "reponse":" Chocolat" ,
+                "vraifaux" : true
+            },
+            "r3":{
+                "reponse":" Saumon" ,
+                "vraifaux" : false
+            },
+            "r4":{
+                "reponse":"" ,
+                "vraifaux" : false
+            }
+        }
+    },
+    "7" : {
+        "enoncer":"7. Que signifie un chat qui ronronne ?",
+        "reponses":{
+            "r1":{
+                "reponse":" Il est en colère" ,
+                "vraifaux" : false
+            },
+            "r2":{
+                "reponse":" Il est content ou cherche à se calmer" ,
+                "vraifaux" : true
+            },
+            "r3":{
+                "reponse":" Il a faim uniquement" ,
+                "vraifaux" : false
+            },
+            "r4":{
+                "reponse":"" ,
+                "vraifaux" : false
+            }
+        }
+    },
+    "8" : {
+        "enoncer":"8. Quelle est la durée de gestation d’une chatte ?",
+        "reponses":{
+            "r1":{
+                "reponse":" 9 semaines" ,
+                "vraifaux" : true
+            },
+            "r2":{
+                "reponse":" 4 semaines" ,
+                "vraifaux" : false
+            },
+            "r3":{
+                "reponse":" 12 semaines" ,
+                "vraifaux" : false
+            },
+            "r4":{
+                "reponse":"" ,
+                "vraifaux" : false
+            }
+        }
+    },
+    "9" : {
+        "enoncer":"9. Comment appelle-t-on un chat mâle stérilisé ?",
+        "reponses":{
+            "r1":{
+                "reponse":" Un matou" ,
+                "vraifaux" : false
+            },
+            "r2":{
+                "reponse":" Un chaton" ,
+                "vraifaux" : false
+            },
+            "r3":{
+                "reponse":" Un chat castré" ,
+                "vraifaux" : true
+            },
+            "r4":{
+                "reponse":"" ,
+                "vraifaux" : false
+            }
+        }
+    },
+    "10" : {
+        "enoncer":"10. Pourquoi les chats se frottent-ils contre vous ?",
+        "reponses":{
+            "r1":{
+                "reponse":" Pour jouer" ,
+                "vraifaux" : false
+            },
+            "r2":{
+                "reponse":" Pour marquer leur territoire" ,
+                "vraifaux" : true
+            },
+            "r3":{
+                "reponse":" Pour demander à sortir" ,
+                "vraifaux" : false
+            },
+            "r4":{
+                "reponse":"" ,
+                "vraifaux" : false
+            }
+        }
+    },
+    "11" : {
+        "enoncer":"11. Quelle couleur d’yeux est fréquente chez les chats siamois ?",
+        "reponses":{
+            "r1":{
+                "reponse":" Bleu" ,
+                "vraifaux" : true
+            },
+            "r2":{
+                "reponse":" Vert" ,
+                "vraifaux" : false
+            },
+            "r3":{
+                "reponse":" Marron" ,
+                "vraifaux" : false
+            },
+            "r4":{
+                "reponse":"" ,
+                "vraifaux" : false
+            }
+        }
+    },
+    "12" : {
+        "enoncer":"12. Quel est l’animal de compagnie le plus répandu en France ?",
+        "reponses":{
+            "r1":{
+                "reponse":" Le chien" ,
+                "vraifaux" : false
+            },
+            "r2":{
+                "reponse":" Le chat" ,
+                "vraifaux" : true
+            },
+            "r3":{
+                "reponse":" Le lapin" ,
+                "vraifaux" : false
+            },
+            "r4":{
+                "reponse":"" ,
+                "vraifaux" : false
+            }
+        }
+    },
+    "13" : {
+        "enoncer":"13. Que signifie un chat qui montre son ventre ?",
+        "reponses":{
+            "r1":{
+                "reponse":" Il veut être caressé (pas toujours !)" ,
+                "vraifaux" : true
+            },
+            "r2":{
+                "reponse":" Il a mal" ,
+                "vraifaux" : false
+            },
+            "r3":{
+                "reponse":" Il a froid" ,
+                "vraifaux" : false
+            },
+            "r4":{
+                "reponse":"" ,
+                "vraifaux" : false
+            }
+        }
+    },
+    "14" : {
+        "enoncer":"14. Comment s’appelle le son aigu que fait un chaton ?",
+        "reponses":{
+            "r1":{
+                "reponse":" Un grognement" ,
+                "vraifaux" : false
+            },
+            "r2":{
+                "reponse":" Un miaulement" ,
+                "vraifaux" : false
+            },
+            "r3":{
+                "reponse":" Un couinement" ,
+                "vraifaux" : true
+            },
+            "r4":{
+                "reponse":"" ,
+                "vraifaux" : false
+            }
+        }
+    },
+    "15" : {
+        "enoncer":"15. Quelle est l’espérance de vie moyenne d’un chat domestique ?",
+        "reponses":{
+            "r1":{
+                "reponse":" 5 à 8 ans" ,
+                "vraifaux" : false
+            },
+            "r2":{
+                "reponse":" 10 à 15 ans" ,
+                "vraifaux" : false
+            },
+            "r3":{
+                "reponse":" 18 à 25 ans" ,
+                "vraifaux" : true
+            },
+            "r4":{
+                "reponse":"" ,
+                "vraifaux" : false
+            }
+        }
+    }
+}}
