@@ -72,6 +72,12 @@ label:hover {
 
 .incorrect { background-color: #f7c5c5; }
 
+.explanation {
+    margin-top: 10px;
+    font-style: italic;
+    color: #555;
+}
+
 #score-timer-wrapper { margin-bottom: 1rem; }
 
 .quiz-header {

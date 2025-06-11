@@ -94,7 +94,7 @@ function showQuestion() {
     quiz.innerHTML = '';
 
     const questionTitle = document.createElement('h3');
-    questionTitle.textContent = questionData.enoncer;
+    questionTitle.textContent = String(currentQuestion+1) +questionData.enoncer;
     quiz.appendChild(questionTitle);
 
     const answersDiv = document.createElement('div');
@@ -102,6 +102,8 @@ function showQuestion() {
 
     for (const key in questionData.reponses) {
         const label = document.createElement('label');
+        label.classList.add('answer-option');
+
         const input = document.createElement('input');
         input.type = 'radio';
         input.name = 'answer';
@@ -120,6 +122,10 @@ function showQuestion() {
     validateBtn.textContent = "Valider";
     quiz.appendChild(validateBtn);
 
+    const explanationDiv = document.createElement('div');
+    explanationDiv.classList.add('explanation');
+    quiz.appendChild(explanationDiv);
+
     validateBtn.addEventListener("click", () => {
         const selected = document.querySelector('input[name="answer"]:checked');
         if (!selected) {
@@ -130,52 +136,47 @@ function showQuestion() {
         clearInterval(timerInterval);
 
         const answerKey = selected.value;
-        if (questionData.reponses[answerKey].vraifaux === true) {
+        const isCorrect = questionData.reponses[answerKey].vraifaux === true;
+        const allLabels = document.querySelectorAll('.answer-option');
+        allLabels.forEach(label => {
+            const input = label.querySelector('input');
+            const key = input.value;
+            if (questionData.reponses[key].vraifaux === true) {
+                label.classList.add('correct');
+            }
+            if (input.checked && !questionData.reponses[key].vraifaux) {
+                label.classList.add('incorrect');
+            }
+            input.disabled = true;
+        });
+
+        if (isCorrect) {
             scores[currentPlayer]++;
         }
 
-        currentQuestion++;
-        currentPlayer = currentPlayer === 0 ? 1 : 0;
-        updateScore();
+        explanationDiv.textContent = questionData.explication || "Pas d'explication disponible.";
 
-        if (currentQuestion < selectedQuestions.length) {
-            showQuestion();
-        } else {
-            showResults();
-        }
+        validateBtn.textContent = "Continuer";
+        validateBtn.disabled = false;
+
+        validateBtn.onclick = () => {
+            if(isCorrect){
+                scores[currentPlayer]--;
+            }
+            currentQuestion++;
+            currentPlayer = currentPlayer === 0 ? 1 : 0;
+            updateScore();
+            if (currentQuestion < selectedQuestions.length) {
+                showQuestion();
+            } else {
+                showResults();
+            }
+        };
     });
 
     playerDisplay.textContent = `Joueur ${currentPlayer + 1}`;
     startTimer();
 }
-
-// Valider la réponse
-validateBtn.addEventListener("click", () => {
-    const selected = document.querySelector('input[name="answer"]:checked');
-    if (!selected) {
-        alert("Veuillez sélectionner une réponse !");
-        return;
-    }
-
-    clearInterval(timerInterval);
-
-    const answerKey = selected.value;
-    const questionData = selectedQuestions[currentQuestion];
-
-    if (questionData.reponses[answerKey].vraifaux === true) {
-        scores[currentPlayer]++;
-    }
-
-    currentQuestion++;
-    currentPlayer = currentPlayer === 0 ? 1 : 0;
-    updateScore();
-
-    if (currentQuestion < selectedQuestions.length) {
-        showQuestion();
-    } else {
-        showResults();
-    }
-});
 
 // Met à jour les scores
 function updateScore() {
@@ -205,7 +206,12 @@ function startTimer() {
 
     timerInterval = setInterval(() => {
         timeLeft--;
-        timerDisplay.textContent = `⏱ ${timeLeft}s`;
+        if (timeLeft < 10){
+            timerDisplay.textContent = `⏱ 0 ${timeLeft}s`;
+        }else{
+            timerDisplay.textContent = `⏱ ${timeLeft}s`;  
+        }
+
 
         if (timeLeft <= 0) {
             clearInterval(timerInterval);

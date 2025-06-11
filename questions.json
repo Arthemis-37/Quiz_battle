@@ -1,331 +1,331 @@
 [ {
-        "enoncer":"1. Quelle est la race de chat sans poils la plus connue ?",
-        "reponses":{
-            "r1":{
+        "enoncer":". Quelle est la race de chat sans poils la plus connue ?",
+        "reponses":[
+            {
                 "reponse":"Sphynx" ,
                 "vraifaux" : true
             },
-            "r2":{
+            {
                 "reponse":"Siamois" ,
                 "vraifaux" : false
             },
-            "r3":{
+            {
                 "reponse":"Persan" ,
                 "vraifaux" : false
             },
-            "r4":{
+            {
                 "reponse":" Angora" ,
                 "vraifaux" : false
             }
-        },
+        ],
         "explication" : "📝 Le Sphynx est une race de chat reconnue pour son absence de poils."
     },
  {
-        "enoncer":"2. Combien de vies dit-on qu’un chat possède ?",
-        "reponses":{
-            "r1":{
+        "enoncer":". Combien de vies dit-on qu’un chat possède ?",
+        "reponses":[
+            {
                 "reponse":" 3" ,
                 "vraifaux" : false
             },
-            "r2":{
+            {
                 "reponse":" 9" ,
                 "vraifaux" : true
             },
-            "r3":{
+            {
                 "reponse":" 7" ,
                 "vraifaux" : false
             },
-            "r4":{
+            {
                 "reponse":"5" ,
                 "vraifaux" : false
             }
-        },
+        ],
         "explication" : "📝 On dit traditionnellement que les chats ont 9 vies."
     },
  {
-        "enoncer":"3. Quelle partie du corps d’un chat lui permet de garder l’équilibre ?",
-        "reponses":{
-            "r1":{
+        "enoncer":". Quelle partie du corps d’un chat lui permet de garder l’équilibre ?",
+        "reponses":[
+            {
                 "reponse":" Sa queue" ,
                 "vraifaux" : true
             },
-            "r2":{
+            {
                 "reponse":" Ses moustaches" ,
                 "vraifaux" : false
             },
-            "r3":{
+            {
                 "reponse":" Ses pattes arrière" ,
                 "vraifaux" : false
             },
-            "r4":{
+            {
                 "reponse":" Ses oreilles" ,
                 "vraifaux" : false
             }
-        },
+        ],
         "explication" : "📝 La queue du chat l’aide à garder son équilibre."
     },
  {
-        "enoncer":"4. Quel est le plus grand félin domestique en taille ?",
-        "reponses":{
-            "r1":{
+        "enoncer":". Quel est le plus grand félin domestique en taille ?",
+        "reponses":[
+            {
                 "reponse":" Bengal" ,
                 "vraifaux" : false
             },
-            "r2":{
+            {
                 "reponse":" Maine Coon" ,
                 "vraifaux" : true
             },
-            "r3":{
+            {
                 "reponse":" British Shorthair" ,
                 "vraifaux" : false
             },
-            "r4":{
+            {
                 "reponse":" Ragdoll" ,
                 "vraifaux" : false
             }
-        },
+        ],
         "explication" : "📝 Le Maine Coon est le plus grand chat domestique en taille."
     },
 {
-        "enoncer":"5. Combien de temps dort un chat en moyenne par jour ?",
-        "reponses":{
-            "r1":{
+        "enoncer":". Combien de temps dort un chat en moyenne par jour ?",
+        "reponses":[
+            {
                 "reponse":" 8 - 11 heures" ,
                 "vraifaux" : false
             },
-            "r2":{
+            {
                 "reponse":" 12 - 16 heures" ,
                 "vraifaux" : true
             },
-            "r3":{
+            {
                 "reponse":" 17 - 19 heures" ,
                 "vraifaux" : false
             },
-            "r4":{
+            {
                 "reponse":" 20 - 23 heures" ,
                 "vraifaux" : false
             }
-        },
+        ],
         "explication" : "📝 Un chat dort en moyenne entre 12 et 16 heures par jour."
     },
  {
-        "enoncer":"6. Quel aliment est toxique pour les chats ?",
-        "reponses":{
-            "r1":{
+        "enoncer":". Quel aliment est toxique pour les chats ?",
+        "reponses":[
+            {
                 "reponse":" Poulet" ,
                 "vraifaux" : false
             },
-            "r2":{
+            {
                 "reponse":" Chocolat" ,
                 "vraifaux" : true
             },
-            "r3":{
+            {
                 "reponse":" Saumon" ,
                 "vraifaux" : false
             },
-            "r4":{
+            {
                 "reponse":" Carotte" ,
                 "vraifaux" : false
             }
-        },
+        ],
         "explication" : "📝 Le chocolat est toxique pour les chats."
     },
 {
-        "enoncer":"7. Que signifie un chat qui ronronne ?",
-        "reponses":{
-            "r1":{
+        "enoncer":". Que signifie un chat qui ronronne ?",
+        "reponses":[
+            {
                 "reponse":" Il est en colère" ,
                 "vraifaux" : false
             },
-            "r2":{
+            {
                 "reponse":" Il est content ou cherche à se calmer" ,
                 "vraifaux" : true
             },
-            "r3":{
+            {
                 "reponse":" Il a faim uniquement" ,
                 "vraifaux" : false
             },
-            "r4":{
+            {
                 "reponse":" Il a peur" ,
                 "vraifaux" : false
             }
-        },
+        ],
         "explication" : "📝 Les chats ronronnent souvent pour exprimer leur bien-être ou s'apaiser."
     },
  {
-        "enoncer":"8. Quelle est la durée de gestation d’une chatte ?",
-        "reponses":{
-            "r1":{
+        "enoncer":". Quelle est la durée de gestation d’une chatte ?",
+        "reponses":[
+            {
                 "reponse":" 9 semaines" ,
                 "vraifaux" : true
             },
-            "r2":{
+            {
                 "reponse":" 4 semaines" ,
                 "vraifaux" : false
             },
-            "r3":{
+            {
                 "reponse":" 12 semaines" ,
                 "vraifaux" : false
             },
-            "r4":{
+            {
                 "reponse":" 6 semaines" ,
                 "vraifaux" : false
             }
-        },
+        ],
         "explication" : "📝 La gestation chez les chattes dure environ 9 semaines."
     },
  {
-        "enoncer":"9. Comment appelle-t-on un chat mâle stérilisé ?",
-        "reponses":{
-            "r1":{
+        "enoncer":". Comment appelle-t-on un chat mâle stérilisé ?",
+        "reponses":[
+            {
                 "reponse":" Un matou" ,
                 "vraifaux" : false
             },
-            "r2":{
+            {
                 "reponse":" Un chaton" ,
                 "vraifaux" : false
             },
-            "r3":{
+            {
                 "reponse":" Un chat castré" ,
                 "vraifaux" : true
             },
-            "r4":{
+            {
                 "reponse":" Un minou" ,
                 "vraifaux" : false
             }
-        },
+        ],
         "explication" : "📝 Un chat mâle stérilisé est appelé chat castré."
     },
 {
-        "enoncer":"10. Pourquoi les chats se frottent-ils contre vous ?",
-        "reponses":{
-            "r1":{
+        "enoncer":". Pourquoi les chats se frottent-ils contre vous ?",
+        "reponses":[
+            {
                 "reponse":" Pour jouer" ,
                 "vraifaux" : false
             },
-            "r2":{
+            {
                 "reponse":" Pour marquer leur territoire" ,
                 "vraifaux" : true
             },
-            "r3":{
+            {
                 "reponse":" Pour demander à sortir" ,
                 "vraifaux" : false
             },
-            "r4":{
+            {
                 "reponse":" Pour se gratter" ,
                 "vraifaux" : false
             }
-        },
+        ],
         "explication" : "📝 En se frottant, les chats déposent des phéromones pour marquer leur territoire."
     },
 {
-        "enoncer":"11. Quelle couleur d’yeux est fréquente chez les chats siamois ?",
-        "reponses":{
-            "r1":{
+        "enoncer":". Quelle couleur d’yeux est fréquente chez les chats siamois ?",
+        "reponses":[
+            {
                 "reponse":" Bleu" ,
                 "vraifaux" : true
             },
-            "r2":{
+            {
                 "reponse":" Vert" ,
                 "vraifaux" : false
             },
-            "r3":{
+            {
                 "reponse":" Marron" ,
                 "vraifaux" : false
             },
-            "r4":{
+            {
                 "reponse":" Jaune" ,
                 "vraifaux" : false
             }
-        },
+        ],
         "explication" : "📝 Les chats siamois ont souvent les yeux bleus."
     },
  {
-        "enoncer":"12. Quel est l’animal de compagnie le plus répandu en France ?",
-        "reponses":{
-            "r1":{
+        "enoncer":". Quel est l’animal de compagnie le plus répandu en France ?",
+        "reponses":[
+            {
                 "reponse":" Le chien" ,
                 "vraifaux" : false
             },
-            "r2":{
+            {
                 "reponse":" Le chat" ,
                 "vraifaux" : true
             },
-            "r3":{
+            {
                 "reponse":" Le lapin" ,
                 "vraifaux" : false
             },
-            "r4":{
+            {
                 "reponse":" Le hamster" ,
                 "vraifaux" : false
             }
-        },
+        ],
         "explication" : "📝 Le chat est l'animal domestique le plus populaire en France."
     },
  {
-        "enoncer":"13. Que signifie un chat qui montre son ventre ?",
-        "reponses":{
-            "r1":{
+        "enoncer":". Que signifie un chat qui montre son ventre ?",
+        "reponses":[
+            {
                 "reponse":" Il veut être caressé (pas toujours !)" ,
                 "vraifaux" : true
             },
-            "r2":{
+            {
                 "reponse":" Il a mal" ,
                 "vraifaux" : false
             },
-            "r3":{
+            {
                 "reponse":" Il a froid" ,
                 "vraifaux" : false
             },
-            "r4":{
+            {
                 "reponse":" Il veut jouer" ,
                 "vraifaux" : false
             }
-        },
+        ],
         "explication" : "📝 Montrer son ventre peut être un signe de confiance chez le chat."
     },
 {
-        "enoncer":"14. Comment s’appelle le son aigu que fait un chaton ?",
-        "reponses":{
-            "r1":{
+        "enoncer":". Comment s’appelle le son aigu que fait un chaton ?",
+        "reponses":[
+            {
                 "reponse":" Un grognement" ,
                 "vraifaux" : false
             },
-            "r2":{
+            {
                 "reponse":" Un miaulement" ,
                 "vraifaux" : false
             },
-            "r3":{
+            {
                 "reponse":" Un couinement" ,
                 "vraifaux" : true
             },
-            "r4":{
+            {
                 "reponse":" Un hurlement" ,
                 "vraifaux" : false
             }
-        },
+        ],
         "explication" : "📝 Le couinement est un miaulement plus aigu, souvent utilisé par les chatons."
     },
  {
-        "enoncer":"15. Quelle est l’espérance de vie moyenne d’un chat domestique ?",
-        "reponses":{
-            "r1":{
+        "enoncer":". Quelle est l’espérance de vie moyenne d’un chat domestique ?",
+        "reponses":[
+            {
                 "reponse":" 5 à 8 ans" ,
                 "vraifaux" : false
             },
-            "r2":{
+            {
                 "reponse":" 10 à 15 ans" ,
                 "vraifaux" : true
             },
-            "r3":{
+            {
                 "reponse":" 18 à 25 ans" ,
                 "vraifaux" : false
             },
-            "r4":{
+            {
                 "reponse":" 2 à 4 ans" ,
                 "vraifaux" : false
             }
-        },
+        ],
         "explication" : "📝 Un chat domestique vit en moyenne entre 10 et 15 ans."
     }
 ]
