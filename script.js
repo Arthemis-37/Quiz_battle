@@ -99,21 +99,25 @@ function showQuestion() {
 
     const answersDiv = document.createElement('div');
     answersDiv.classList.add('answers');
+    const shuffledAnswers = shuffleArray(
+        questionData.reponses.map((rep, index) => ({ ...rep, index }))
+    );
 
-    for (const key in questionData.reponses) {
+    for (const rep of shuffledAnswers) {
         const label = document.createElement('label');
         label.classList.add('answer-option');
 
         const input = document.createElement('input');
         input.type = 'radio';
         input.name = 'answer';
-        input.value = key;
+        input.value = rep.index; // <- on stocke l’index original comme valeur
 
         label.appendChild(input);
-        label.appendChild(document.createTextNode(questionData.reponses[key].reponse));
+        label.appendChild(document.createTextNode(rep.reponse));
         answersDiv.appendChild(label);
         answersDiv.appendChild(document.createElement('br'));
     }
+
 
     quiz.appendChild(answersDiv);
 
