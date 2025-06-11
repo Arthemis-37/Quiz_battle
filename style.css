@@ -52,6 +52,10 @@ label {
     padding: 0.3rem;
     border-radius: 5px;
 }
+label:hover {
+    background-color: #ffe6d8;
+}
+
 .quiz-container {
     max-width: 600px;
     margin: 2rem auto 2rem auto;
@@ -65,8 +69,11 @@ label {
     display: none;
 }
 .correct { background-color: #c8f7c5; }
+
 .incorrect { background-color: #f7c5c5; }
+
 #score-timer-wrapper { margin-bottom: 1rem; }
+
 .quiz-header {
     display: flex;
     justify-content: space-between;
@@ -79,7 +86,9 @@ label {
     box-shadow: 0 2px 4px rgba(0,0,0,0.1);
     border-bottom: 4px solid #ffb68e;
 }
+
 .quiz-title { font-size: 1.4rem; color: #444; }
+
 .player-info {
     display: flex;
     gap: 1rem;
@@ -105,6 +114,8 @@ footer {
     border-top: 1px solid #ffcfa5;
     text-align: center;
     width: 100%;
+    position: fixed;
+    bottom: 0;
 }
 @media (max-width: 700px) {
     .quiz-header { flex-direction: column; gap: 0.5rem; }

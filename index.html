@@ -10,7 +10,8 @@
 <!-- Page d'accueil -->
 <div id="welcome-screen">
     <h1>Bienvenue dans le Quiz Battle : 🐾 Chats 🐾</h1>
-    <button id="start-button">🎮 Commencer le Quiz</button>
+    <button id="start-button-pvp">🎮 Commencer le Quiz</button>
+    <button id="start-button-ai">💻 Contre un ordinateur</button>
     <div id="cat-decoration"></div>
 </div>
 
@@ -18,9 +19,10 @@
 <section id="quiz-section" style="display: none;">
     <header class="quiz-header">
         <div class="quiz-title">🐾 Quiz Battle : Chats 🐾</div>
+        <div id="score">👤 Joueur 1 : 0 | 👤 Joueur 2 : 0</div>
         <div class="player-info">
             <span id="current-player">Joueur 1</span>
-            <span id="player-timer">⏱ 0s</span>
+            <span id="timer">⏱ 0s</span>
         </div>
     </header>
     <div id="quiz-content">
@@ -33,6 +35,7 @@
                     <label><input type="radio" name="q1" value="c"> Persan</label>
                     <label><input type="radio" name="q1" value="d"> Angora</label>
                 </div>
+                <button id="next-btn">Valider</button>
             </div>
         </div>
     </div>

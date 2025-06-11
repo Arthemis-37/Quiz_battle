@@ -1,11 +1,3 @@
-// Variables globales
-let currentQuestion = 0;
-let scores = [0, 0];
-let currentPlayer = 0;
-let timeSpent = [0, 0];
-let timerInterval;
-const questions = document.querySelectorAll('.question');
-
 // Affichage des chats décoratifs
 function placeCatsRandomly() {
     const container = document.getElementById('cat-decoration');
@@ -42,124 +34,199 @@ function placeCatsRandomly() {
 window.onload = placeCatsRandomly;
 window.onresize = placeCatsRandomly;
 
+// Variables globales
+let currentQuestion = 0;
+let scores = [0, 0];
+let currentPlayer = 0;
+let questionTime = 15;
+let timerInterval;
+
+let allQuestions = [];
+let selectedQuestions = [];
+
+const startButtonPVP = document.getElementById("start-button-pvp");
+const startButtonAI = document.getElementById("start-button-ai");
+const welcomeScreen = document.getElementById("welcome-screen");
+const quizSection = document.getElementById("quiz-section");
+const quiz = document.getElementById("quiz");
+const playerDisplay = document.getElementById("current-player");
+const scoreDisplay = document.getElementById("score");
+const timerDisplay = document.getElementById("timer");
+
+// Charger les questions depuis le fichier JSON
+fetch('questions.json')
+  .then(response => {
+    if (!response.ok) {
+      throw new Error('Erreur lors du chargement des questions.');
+    }
+    return response.json();
+  })
+  .then(data => {
+    allQuestions = data;
+    console.log('Questions chargées :', allQuestions);
+  })
+  .catch(error => {
+    console.error('Erreur de chargement des données :', error);
+  });
+
 // Démarrage du quiz
-document.getElementById("start-button").addEventListener("click", function () {
-    document.getElementById("welcome-screen").style.display = "none";
-    document.getElementById("quiz-section").style.display = "block";
-    document.getElementById("quiz").style.display = "block";
+startButtonPVP.addEventListener("click", function () {
+    welcomeScreen.style.display = "none";
+    quizSection.style.display = "block";
+    quiz.style.display = "block";
     startQuiz();
 });
 
+// Fonction de démarrage du quiz
 function startQuiz() {
+    selectedQuestions = shuffleArray(allQuestions).slice(0, 10);
     currentQuestion = 0;
-    currentPlayer = 0;
     scores = [0, 0];
-    timeSpent = [0, 0];
-    document.getElementById('quiz').style.display = 'block';
-    questions.forEach(q => q.style.display = 'none');
-    document.getElementById("next-btn").disabled = false;
-    Array.from(document.querySelectorAll('label')).forEach(label => {
-        label.classList.remove('correct', 'incorrect');
-    });
-    showQuestion(0);
-    updateScoreDisplay();
-    updateTimerDisplay();
+    currentPlayer = 0;
+    updateScore();
+    showQuestion();
 }
 
-function showQuestion(index) {
-    questions.forEach(q => q.style.display = 'none');
-    questions[index].style.display = 'block';
-    document.getElementById("current-player").textContent = `Joueur ${currentPlayer + 1}`;
-    document.getElementById("player-timer").textContent = `⏱ ${timeSpent[currentPlayer]}s`;
-    // Réinitialise les sélections
-    const radios = questions[index].querySelectorAll('.answers input[type="radio"]');
-    radios.forEach(radio => {
-        radio.checked = false;
-        radio.parentElement.classList.remove('correct', 'incorrect');
-    });
-    // Active le bouton
-    document.getElementById("next-btn").disabled = false;
-    // Démarre le chrono
+// Afficher une question
+function showQuestion() {
     clearInterval(timerInterval);
+    const questionData = selectedQuestions[currentQuestion];
+    quiz.innerHTML = '';
+
+    const questionTitle = document.createElement('h3');
+    questionTitle.textContent = questionData.enoncer;
+    quiz.appendChild(questionTitle);
+
+    const answersDiv = document.createElement('div');
+    answersDiv.classList.add('answers');
+
+    for (const key in questionData.reponses) {
+        const label = document.createElement('label');
+        const input = document.createElement('input');
+        input.type = 'radio';
+        input.name = 'answer';
+        input.value = key;
+
+        label.appendChild(input);
+        label.appendChild(document.createTextNode(questionData.reponses[key].reponse));
+        answersDiv.appendChild(label);
+        answersDiv.appendChild(document.createElement('br'));
+    }
+
+    quiz.appendChild(answersDiv);
+
+    const validateBtn = document.createElement("button");
+    validateBtn.id = "next-btn";
+    validateBtn.textContent = "Valider";
+    quiz.appendChild(validateBtn);
+
+    validateBtn.addEventListener("click", () => {
+        const selected = document.querySelector('input[name="answer"]:checked');
+        if (!selected) {
+            alert("Veuillez sélectionner une réponse !");
+            return;
+        }
+
+        clearInterval(timerInterval);
+
+        const answerKey = selected.value;
+        if (questionData.reponses[answerKey].vraifaux === true) {
+            scores[currentPlayer]++;
+        }
+
+        currentQuestion++;
+        currentPlayer = currentPlayer === 0 ? 1 : 0;
+        updateScore();
+
+        if (currentQuestion < selectedQuestions.length) {
+            showQuestion();
+        } else {
+            showResults();
+        }
+    });
+
+    playerDisplay.textContent = `Joueur ${currentPlayer + 1}`;
+    startTimer();
+}
+
+// Valider la réponse
+validateBtn.addEventListener("click", () => {
+    const selected = document.querySelector('input[name="answer"]:checked');
+    if (!selected) {
+        alert("Veuillez sélectionner une réponse !");
+        return;
+    }
+
+    clearInterval(timerInterval);
+
+    const answerKey = selected.value;
+    const questionData = selectedQuestions[currentQuestion];
+
+    if (questionData.reponses[answerKey].vraifaux === true) {
+        scores[currentPlayer]++;
+    }
+
+    currentQuestion++;
+    currentPlayer = currentPlayer === 0 ? 1 : 0;
+    updateScore();
+
+    if (currentQuestion < selectedQuestions.length) {
+        showQuestion();
+    } else {
+        showResults();
+    }
+});
+
+// Met à jour les scores
+function updateScore() {
+    scoreDisplay.textContent = `👤 Joueur 1 : ${scores[0]} | 👤 Joueur 2 : ${scores[1]}`;
+}
+
+// Afficher les résultats finaux
+function showResults() {
+    quiz.innerHTML = '';
+    const result = document.createElement('h2');
+    if (scores[0] > scores[1]) {
+        result.textContent = "🏆 Joueur 1 gagne !";
+    } else if (scores[1] > scores[0]) {
+        result.textContent = "🏆 Joueur 2 gagne !";
+    } else {
+        result.textContent = "🤝 Match nul !";
+    }
+
+    quiz.appendChild(result);
+    localStorage.setItem("dernierScoreQuizBattle", JSON.stringify(scores));
+}
+
+// Timer
+function startTimer() {
+    let timeLeft = questionTime;
+    timerDisplay.textContent = `⏱ ${timeLeft}s`;
+
     timerInterval = setInterval(() => {
-        timeSpent[currentPlayer]++;
-        updateTimerDisplay();
+        timeLeft--;
+        timerDisplay.textContent = `⏱ ${timeLeft}s`;
+
+        if (timeLeft <= 0) {
+            clearInterval(timerInterval);
+            alert("⏰ Temps écoulé !");
+            currentQuestion++;
+            currentPlayer = currentPlayer === 0 ? 1 : 0;
+            if (currentQuestion < selectedQuestions.length) {
+                showQuestion();
+            } else {
+                showResults();
+            }
+        }
     }, 1000);
 }
 
-function updateTimerDisplay() {
-    document.getElementById("timer").textContent =
-        `⏱️ Temps - Joueur 1 : ${timeSpent[0]}s | Joueur 2 : ${timeSpent[1]}s`;
-    document.getElementById("player-timer").textContent = `⏱ ${timeSpent[currentPlayer]}s`;
-}
-
-function updateScoreDisplay() {
-    document.getElementById("score").textContent =
-        `👤 Joueur 1 : ${scores[0]} | 👤 Joueur 2 : ${scores[1]}`;
-}
-
-// Gestion du bouton "Valider la réponse"
-document.getElementById("next-btn").addEventListener("click", function () {
-    calculerScore();
-});
-
-function calculerScore() {
-    const question = questions[currentQuestion];
-    const selected = questions[currentQuestion].querySelector('.answers input[type="radio"]:checked');
-    if (!selected) {
-        alert("Veuillez sélectionner une réponse.");
-        return;
+// Mélanger les questions
+function shuffleArray(array) {
+    const copy = array.slice();
+    for (let i = copy.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [copy[i], copy[j]] = [copy[j], copy[i]];
     }
-    // Désactive le bouton pour éviter double clic
-    document.getElementById("next-btn").disabled = true;
-
-    const correct = question.getAttribute('data-correct');
-    if (selected.value === correct) {
-        scores[currentPlayer]++;
-        selected.parentElement.classList.add('correct');
-    } else {
-        selected.parentElement.classList.add('incorrect');
-        const goodAnswer = question.querySelector(`input[value="${correct}"]`);
-        if (goodAnswer) {
-            goodAnswer.parentElement.classList.add('correct');
-        }
-    }
-    clearInterval(timerInterval);
-
-    updateScoreDisplay();
-
-    currentQuestion++;
-    if (currentQuestion < questions.length) {
-        // Change de joueur après un court délai pour voir la correction
-        setTimeout(() => {
-            currentPlayer = 1 - currentPlayer;
-            showQuestion(currentQuestion);
-        }, 1000);
-    } else {
-        setTimeout(showRecap, 1200);
-    }
-}
-
-function showRecap() {
-    clearInterval(timerInterval);
-    const container = document.querySelector('.quiz-container');
-    container.innerHTML = "<h2>🎉 Résultats du Quiz 🎉</h2>";
-    container.innerHTML += `<p>Joueur 1 : ${scores[0]} points (${timeSpent[0]}s)</p>`;
-    container.innerHTML += `<p>Joueur 2 : ${scores[1]} points (${timeSpent[1]}s)</p>`;
-    if (scores[0] > scores[1]) {
-        container.innerHTML += `<p>🏆 Joueur 1 gagne !</p>`;
-    } else if (scores[1] > scores[0]) {
-        container.innerHTML += `<p>🏆 Joueur 2 gagne !</p>`;
-    } else {
-        container.innerHTML += `<p>🤝 Match nul !</p>`;
-    }
-    // Correction
-    container.innerHTML += "<h3>🔍 Correction :</h3>";
-    questions.forEach((q, i) => {
-        const questionText = q.querySelector('p').textContent;
-        const correctValue = q.getAttribute('data-correct');
-        const correctLabel = q.querySelector(`input[value="${correctValue}"]`).parentElement.textContent;
-        container.innerHTML += `<p><strong>Q${i + 1}:</strong> ${questionText}<br>✅ Réponse correcte : ${correctLabel}</p>`;
-    });
-    container.innerHTML += `<button onclick="location.reload()">Rejouer</button>`;
+    return copy;
 }
