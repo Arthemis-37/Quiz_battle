@@ -1,7 +1,9 @@
 #🎮 Quiz Battle – Projet JavaScript
 
 Durée estimée : 24 heures
+
 Travail en binôme Raphël & Constance
+
 Technologies : HTML, CSS, JavaScript
 
 #📋 Description
