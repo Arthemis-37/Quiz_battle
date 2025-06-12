@@ -34,6 +34,18 @@ function placeCatsRandomly() {
 window.onload = placeCatsRandomly;
 window.onresize = placeCatsRandomly;
 
+
+function lancerMusique() {
+const audio = document.getElementById('audio');
+audio.play()
+    .then(() => {
+        console.log("Musique du quiz lancée !");
+    })
+    .catch((err) => {
+        console.error("Erreur lors de la lecture :", err);
+    });
+}
+
 // Variables globales
 let currentQuestion = 0;
 let scores = [0, 0];
@@ -192,9 +204,19 @@ function showQuestion() {
                 showQuestion();
             } else {
                 showResults();
-            }
-        };
-    });
+                    const audio = document.getElementById('audio');
+                    audio.pause();
+                    const mus = document.getElementById('nya');
+                    mus.play()
+                        .then(() => {
+                        console.log("Musique lancée !");
+                        })
+                        .catch((err) => {
+                        console.error("Erreur lors de la lecture :", err);
+                        });
+                            }
+                        };
+                    });
 
     playerDisplay.textContent =`${playerAvatars[currentPlayer]} ${playerNames[currentPlayer]}`;
     startTimer();
