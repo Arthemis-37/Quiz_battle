@@ -44,6 +44,7 @@ button:hover { background-color: #ff7f50; }
     opacity: 1;
     transform: scale(1.5) rotate(10deg);
 }
+
 /* Quiz */
 label {
     display: block;

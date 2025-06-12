@@ -60,19 +60,19 @@ const timerDisplay = document.getElementById("timer");
 
 // Charger les questions depuis le fichier JSON
 fetch('questions.json')
-  .then(response => {
+    .then(response => {
     if (!response.ok) {
-      throw new Error('Erreur lors du chargement des questions.');
+        throw new Error('Erreur lors du chargement des questions.');
     }
     return response.json();
-  })
-  .then(data => {
-    allQuestions = data;
-    console.log('Questions chargées :', allQuestions);
-  })
-  .catch(error => {
-    console.error('Erreur de chargement des données :', error);
-  });
+    })
+    .then(data => {
+        allQuestions = data;
+        console.log('Questions chargées :', allQuestions);
+    })
+    .catch(error => {
+        console.error('Erreur de chargement des données :', error);
+    });
 
 // Démarrage du quiz
 startButtonPVP.addEventListener("click", function () {
@@ -254,7 +254,7 @@ function startTimer() {
     }, 1000);
 }
 
-// Mélanger les questions
+// Mélanger les questions & réponses
 function shuffleArray(array) {
     const copy = array.slice();
     for (let i = copy.length - 1; i > 0; i--) {
