@@ -192,6 +192,7 @@ function showQuestion() {
                 showQuestion();
             } else {
                 showResults();
+                
             }
         };
     });
@@ -220,8 +221,29 @@ function showResults() {
         result.textContent = "🤝 Match nul !";
         
     }
+    quiz.appendChild(avatar);
     quiz.appendChild(result);
 
+    const replayBtn = document.createElement('button');
+    replayBtn.textContent = "🔄 Rejouer";
+    replayBtn.classList.add("result-button");
+    replayBtn.addEventListener("click", () => {
+        startQuiz(); // même joueurs
+    });
+
+    const quitBtn = document.createElement('button');
+    quitBtn.textContent = "🏠 Quitter";
+    quitBtn.classList.add("result-button");
+    quitBtn.addEventListener("click", () => {
+        quizSection.style.display = "none";
+        quiz.innerHTML = '';
+        welcomeScreen.style.display = "block";
+        document.getElementById("player1-name").value = "";
+        document.getElementById("player2-name").value = "";
+    });
+
+    quiz.appendChild(replayBtn);
+    quiz.appendChild(quitBtn);
 
     localStorage.setItem("dernierScoreQuizBattle", JSON.stringify(scores));
 }

@@ -113,6 +113,21 @@ label:hover {
     border-radius: 10px;
     color: #d14;
 }
+
+.result-button {
+    margin: 10px;
+    padding: 10px 20px;
+    font-size: 1rem;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+    background-color: #f5c542;
+    transition: background 0.3s ease;
+}
+.result-button:hover {
+    background-color: #e0b030;
+}
+
 footer {
     background-color: #fff0dc;
     color: #555;
