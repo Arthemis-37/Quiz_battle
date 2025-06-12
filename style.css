@@ -205,3 +205,8 @@ footer {
 #start-button-pvp2:active {
     transform: scale(0.97);
 }
+
+.gifImage{
+    width: 200px;
+    height: 100px;
+}
