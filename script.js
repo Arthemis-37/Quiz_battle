@@ -241,6 +241,6 @@ function shuffleArray(array) {
     return copy;
 }
 
-
-const cat = document.getElementById("audio")
-cat.play()
+//musique de fond
+const cat = document.getElementById("audio");
+cat.play();
