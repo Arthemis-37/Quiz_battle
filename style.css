@@ -143,3 +143,85 @@ footer {
     .quiz-header { flex-direction: column; gap: 0.5rem; }
     .quiz-container { padding: 0.6rem; }
 }
+
+/*Personalisation du joueur*/
+#player-setup {
+    background-color: #fff8f2;
+    border: 2px solid #ffd3b6;
+    border-radius: 16px;
+    max-width: 500px;
+    margin: 30px auto;
+    padding: 30px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    font-family: 'Comic Sans MS', cursive, sans-serif;
+}
+
+#player-setup h1 {
+    font-size: 1.8em;
+    color: #ff8c42;
+    margin-bottom: 20px;
+}
+
+.player-input {
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.player-input label {
+    font-weight: bold;
+    margin-bottom: 8px;
+    color: #333;
+}
+
+.player-input input,
+.player-input select {
+    padding: 10px 15px;
+    border: 2px solid #ffccab;
+    border-radius: 12px;
+    font-size: 1em;
+    width: 80%;
+    max-width: 300px;
+    background-color: #fff5ed;
+    transition: border-color 0.3s;
+}
+
+.player-input input:focus,
+.player-input select:focus {
+    border-color: #ffa07a;
+    outline: none;
+}
+
+#start-button-pvp2 {
+    background-color: #ffa680;
+    color: white;
+    font-size: 1em;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 15px;
+    margin-top: 30px;
+    cursor: pointer;
+    font-family: 'Comic Sans MS', cursive, sans-serif;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+    transition: all 0.2s ease-in-out;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+#start-button-pvp2:hover {
+    background-color: #ff8855;
+    transform: scale(1.03);
+}
+
+#start-button-pvp2:active {
+    transform: scale(0.97);
+}
+
+.gifImage{
+    width: 200px;
+    height: 100px;
+}

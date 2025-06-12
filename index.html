@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <audio id="audio" src="Cats.mp3" loop></audio>
+
 <!-- Page d'accueil -->
 <div id="welcome-screen">
     <h1>Bienvenue dans le Quiz Battle : 🐾 Chats 🐾</h1>
@@ -17,32 +17,32 @@
 </div>
 
 <!--Personnalisation d'avatar-->
-
 <div id="player-setup" style="display: none;">
-  <h1>Personnalise tes joueurs</h1>
-  
-  <div class="player-input">
-    <label>👤 Joueur 1 :</label>
-    <input type="text" id="player1-name" placeholder="Nom du Joueur 1" />
-    <select id="player1-avatar">
-      <option value="😺">😺</option>
-      <option value="🐱">🐱</option>
-      <option value="😻">😻</option>
-      <option value="🐈">🐈</option>
-    </select>
-  </div>
+    <h1>Personnalise tes joueurs</h1>
+    
+    <div class="player-input">
+        <label>👤 Joueur 1 :</label>
+        <input type="text" id="player1-name" placeholder="Nom du Joueur 1" />
+        <select id="player1-avatar">
+        <option value="😺">😺</option>
+        <option value="🐱">🐱</option>
+        <option value="😻">😻</option>
+        <option value="🐈">🐈</option>
+        </select>
+    </div>
 
-  <div class="player-input">
-    <label>👤 Joueur 2 :</label>
-    <input type="text" id="player2-name" placeholder="Nom du Joueur 2" />
-    <select id="player2-avatar">
-      <option value="😺">😺</option>
-      <option value="🐱">🐱</option>
-      <option value="😻">😻</option>
-      <option value="🐈">🐈</option>
-    </select>
-  </div>
-    <button id="start-button-pvp2">🎮 Commencer le Quiz</button>
+    <div class="player-input">
+        <label>👤 Joueur 2 :</label>
+        <input type="text" id="player2-name" placeholder="Nom du Joueur 2" />
+        <select id="player2-avatar">
+            <option value="😺">😺</option>
+            <option value="🐱">🐱</option>
+            <option value="😻">😻</option>
+            <option value="🐈">🐈</option>
+        </select>
+    </div>
+    <button id="start-button-pvp2" onclick="lancerMusique()">🎮 Commencer le Quiz</button>
+    <audio id="audio" src="/static/Cats.mp3" loop></audio>
 </div>
 
 
@@ -56,6 +56,8 @@
             <span id="timer">⏱ 0s</span>
         </div>
     </header>
+    <audio id="nya" src="static/Nyan Cat! [Official].mp3" loop></audio>
+
     <div id="quiz-content">
         <div class="quiz-container" id="quiz" style="display: none;">
         </div>
