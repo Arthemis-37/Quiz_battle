@@ -240,7 +240,3 @@ function shuffleArray(array) {
     }
     return copy;
 }
-
-//musique de fond
-const cat = document.getElementById("audio");
-cat.play();
