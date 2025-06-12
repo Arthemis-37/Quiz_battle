@@ -10,10 +10,40 @@
 <!-- Page d'accueil -->
 <div id="welcome-screen">
     <h1>Bienvenue dans le Quiz Battle : 🐾 Chats 🐾</h1>
-    <button id="start-button-pvp">🎮 Commencer le Quiz</button>
+    <button id="start-button-pvp">👨 Contre un autre Joueur</button>
     <button id="start-button-ai">💻 Contre un ordinateur</button>
     <div id="cat-decoration"></div>
 </div>
+
+<!--Personnalisation d'avatar-->
+
+<div id="player-setup" style="display: none;">
+  <h1>Personnalise tes joueurs</h1>
+  
+  <div class="player-input">
+    <label>👤 Joueur 1 :</label>
+    <input type="text" id="player1-name" placeholder="Nom du Joueur 1" />
+    <select id="player1-avatar">
+      <option value="😺">😺</option>
+      <option value="🐱">🐱</option>
+      <option value="😻">😻</option>
+      <option value="🐈">🐈</option>
+    </select>
+  </div>
+
+  <div class="player-input">
+    <label>👤 Joueur 2 :</label>
+    <input type="text" id="player2-name" placeholder="Nom du Joueur 2" />
+    <select id="player2-avatar">
+      <option value="😺">😺</option>
+      <option value="🐱">🐱</option>
+      <option value="😻">😻</option>
+      <option value="🐈">🐈</option>
+    </select>
+  </div>
+    <button id="start-button-pvp2">🎮 Commencer le Quiz</button>
+</div>
+
 
 <!-- Section du Quiz (cachée avant de cliquer sur le bouton) -->
 <section id="quiz-section" style="display: none;">

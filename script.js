@@ -40,18 +40,23 @@ let scores = [0, 0];
 let currentPlayer = 0;
 let questionTime = 15;
 let timerInterval;
-
 let allQuestions = [];
 let selectedQuestions = [];
+let playerNames = ["Joueur 1", "Joueur 2"];
+let playerAvatars = ["😺", "😺"];
 
 const startButtonPVP = document.getElementById("start-button-pvp");
+const startButtonPVP2 = document.getElementById("start-button-pvp2");
 const startButtonAI = document.getElementById("start-button-ai");
 const welcomeScreen = document.getElementById("welcome-screen");
+const setupScreen = document.getElementById("player-setup");
 const quizSection = document.getElementById("quiz-section");
 const quiz = document.getElementById("quiz");
 const playerDisplay = document.getElementById("current-player");
 const scoreDisplay = document.getElementById("score");
 const timerDisplay = document.getElementById("timer");
+
+
 
 // Charger les questions depuis le fichier JSON
 fetch('questions.json')
@@ -72,6 +77,19 @@ fetch('questions.json')
 // Démarrage du quiz
 startButtonPVP.addEventListener("click", function () {
     welcomeScreen.style.display = "none";
+    setupScreen.style.display = "block"
+});
+
+startButtonPVP2.addEventListener("click", function () {
+    const name1 = document.getElementById("player1-name").value.trim();
+    const name2 = document.getElementById("player2-name").value.trim();
+    const avatar1 = document.getElementById("player1-avatar").value;
+    const avatar2 = document.getElementById("player2-avatar").value;
+
+    playerNames = [name1 || "Joueur 1", name2 || "Joueur 2"];
+    playerAvatars = [avatar1, avatar2];
+
+    setupScreen.style.display = "none";
     quizSection.style.display = "block";
     quiz.style.display = "block";
     startQuiz();
@@ -178,28 +196,33 @@ function showQuestion() {
         };
     });
 
-    playerDisplay.textContent = `Joueur ${currentPlayer + 1}`;
+    playerDisplay.textContent =`${playerAvatars[currentPlayer]} ${playerNames[currentPlayer]}`;
     startTimer();
 }
 
 // Met à jour les scores
 function updateScore() {
-    scoreDisplay.textContent = `👤 Joueur 1 : ${scores[0]} | 👤 Joueur 2 : ${scores[1]}`;
+    scoreDisplay.textContent = `${playerAvatars[0]} ${playerNames[0]} : ${scores[0]} | ${playerAvatars[1]} ${playerNames[1]} : ${scores[1]}`;
 }
 
 // Afficher les résultats finaux
 function showResults() {
     quiz.innerHTML = '';
     const result = document.createElement('h2');
+    const avatar = document.createElement('h1');
     if (scores[0] > scores[1]) {
-        result.textContent = "🏆 Joueur 1 gagne !";
+        result.textContent = `🏆 ${playerNames[0]} gagne !`;
+        avatar.textContent = `${playerAvatars[0]}`
     } else if (scores[1] > scores[0]) {
-        result.textContent = "🏆 Joueur 2 gagne !";
+        result.textContent = `🏆 ${playerNames[1]} gagne !`;
+        avatar.textContent = `${playerAvatars[1]}`
     } else {
         result.textContent = "🤝 Match nul !";
+        
     }
-
     quiz.appendChild(result);
+
+
     localStorage.setItem("dernierScoreQuizBattle", JSON.stringify(scores));
 }
 
