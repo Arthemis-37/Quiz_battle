@@ -205,7 +205,22 @@ function showQuestion() {
       currentPlayer = currentPlayer === 0 ? 1 : 0;
       currentQuestion++;
       updateScore();
-      currentQuestion < selectedQuestions.length ? showQuestion() : showResults();
+            if (currentQuestion < selectedQuestions.length) {
+                showQuestion();
+            } else {
+                showResults();
+                    const audio = document.getElementById('audio');
+                    audio.pause();
+                    audio.currentTime = 0;
+                    const mus = document.getElementById('nya');
+                    mus.play()
+                        .then(() => {
+                        console.log("Musique lancée !");
+                        })
+                        .catch((err) => {
+                        console.error("Erreur lors de la lecture :", err);
+                        });
+                            }
     };
   };
 
@@ -340,7 +355,9 @@ function showResults() {
   replayBtn.className = "result-button";
   replayBtn.textContent = "🔄 Rejouer";
   replayBtn.onclick = () => {
-    document.getElementById('nya').pause();
+    const mus = document.getElementById('nya');
+    mus.pause();
+    mus.currentTime = 0;
     lancerMusique();
     startQuiz();
   };
@@ -349,6 +366,9 @@ function showResults() {
   quitBtn.className = "result-button";
   quitBtn.textContent = "🏠 Quitter";
   quitBtn.onclick = () => {
+    const mus = document.getElementById('nya');
+    mus.pause();
+    mus.currentTime = 0;
     quizSection.style.display = "none";
     welcomeScreen.style.display = "block";
     document.getElementById("player1-name").value = "";
